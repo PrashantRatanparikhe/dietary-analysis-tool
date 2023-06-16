@@ -1,0 +1,14 @@
+version: "3.3"
+
+services:
+  node:
+    container_name: NUTRITIONS_APP
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - 8080:8080
+    restart: unless-stopped
